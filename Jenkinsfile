@@ -28,9 +28,8 @@ pipeline {
                 }
             }
             }
-    }
 
-            stage('Building Docker Image') {
+        stage('Building Docker Image') {
                 steps {
                     script {
                         /* remove all container */
@@ -45,7 +44,7 @@ pipeline {
                         }
                     }
                 }
-            }
+        }
 
             stage('Deploying Docker Image to Dockerhub') {
                 steps {
@@ -73,5 +72,6 @@ pipeline {
                 sh 'docker run --name web-proxy -p 80:80 -d iamstarcode/team-boot-frontend:latest'
                 }
         }
-}
+    }
 
+}
