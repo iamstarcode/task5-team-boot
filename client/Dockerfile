@@ -4,14 +4,14 @@ FROM node:16-alpine as builder
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY . .
 
-COPY package.json ./
-COPY package-lock.json ./
 
 RUN npm i
 
-COPY . ./
+RUN npm run build
+
+
 
 # Bundle static assets with nginx
 FROM nginx:1.23.2-alpine as production
