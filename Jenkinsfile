@@ -16,14 +16,14 @@ pipeline {
             stage('Unit Tests') {
             steps {
                 script {
-                        sh 'cd client'
-                        sh 'npm install --verbose'
+                        sh 'cd client && npm install --verbose'
+                        //sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
 
                         sh 'cd ..'
-                        sh 'cd server'
+                        sh 'cd server && npm install --verbose'
 
-                        sh 'npm install --verbose'
+                        //sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
                 }
             }
@@ -73,5 +73,4 @@ pipeline {
                 }
         }
     }
-
 }
