@@ -6,12 +6,9 @@ WORKDIR /app
 
 COPY . .
 
-
 RUN npm i
 
 RUN npm run build
-
-
 
 # Bundle static assets with nginx
 FROM nginx:1.23.2-alpine as production

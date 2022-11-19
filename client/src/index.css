@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@layer components {
+    .button {
+        @apply py-3 px-6  justify-center items-center font-bold text-base text-center lg:w-44 h-12 rounded;
+    }
 
-    .button{
-        @apply py-3 px-6 justify-center items-center font-bold text-base text-center lg:w-44 h-12 rounded;
+    .orange {
+        @apply bg-[#F67A24] border  hover:bg-[#F9A66D] text-white;
+    }
+
+    .border-orange {
+        @apply text-[#F67A24] border border-[#F67A24] hover:border-[#F9A66D] bg-transparent;
     }
 }
 
