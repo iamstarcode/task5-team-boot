@@ -1,5 +1,6 @@
 FROM node:16-alpine as builder
 
+ENV HUSKY_SKIP_INSTALL=1
 #add curl
 
 WORKDIR /app
