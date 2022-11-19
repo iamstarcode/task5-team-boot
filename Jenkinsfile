@@ -33,7 +33,7 @@ pipeline {
                 steps {
                     script {
                         /* remove all container */
-                        sh 'docker stop $(dcoker ps -aq)'
+                        sh 'docker stop $(docker ps -aq)'
 
                         dir('client') {
                         dockerImageFrontend = docker.build registryFrontend + ':latest'
