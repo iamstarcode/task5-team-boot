@@ -22,9 +22,9 @@ pipeline {
 
                         //sh 'cd ..'
                         sh 'cd server/ && npm install --verbose'
-                        // 'echo "werey"'
-                        //sh 'npm install --verbose'
-                        //sh 'npm test --watchAll=false'
+                // 'echo "werey"'
+                //sh 'npm install --verbose'
+                //sh 'npm test --watchAll=false'
                 }
             }
             }
@@ -51,13 +51,7 @@ pipeline {
                     script {
                         docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
                         dockerImageFrontend.push()
-                        dockerImageBackend.push()dir('client') {
-                        dockerImageFrontend = docker.build registryFrontend + ':latest'
-                        }
-
-                        dir('server') {
-                        dockerImageBackend = docker.build registryBackend + ':latest'
-                        }
+                        dockerImageBackend.push()
                         }
                     }
                 }
@@ -65,8 +59,7 @@ pipeline {
 
         stage('Deploying') {
                 steps {
-                  sh 'docker-compse up -d'
-                }
+                sh 'docker-compse up -d'
                 }
         }
     }
