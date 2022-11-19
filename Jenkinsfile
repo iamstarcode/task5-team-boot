@@ -15,19 +15,19 @@ pipeline {
     stages {
             stage('Unit Tests') {
             steps {
-                     script {
+                script {
                         sh 'cd client'
                         sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
 
                         sh 'cd ..'
                         sh 'cd server'
-                         sh 'npm install --verbose'
+                    sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
-                    }
-                    }
+                }
             }
             }
+    }
 
             stage('Building Docker Image') {
                 steps {
@@ -72,5 +72,5 @@ pipeline {
                 sh 'docker run --name web-proxy -p 80:80 -d iamstarcode/team-boot-frontend:latest'
                 }
         }
-    }
 }
+
