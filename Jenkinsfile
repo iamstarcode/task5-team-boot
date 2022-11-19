@@ -22,7 +22,8 @@ pipeline {
 
                         sh 'cd ..'
                         sh 'cd server'
-                    sh 'npm install --verbose'
+
+                        sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
                 }
             }
