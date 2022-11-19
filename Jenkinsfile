@@ -24,7 +24,7 @@ pipeline {
                         sh 'cd server/ && npm install --verbose'
                         sh 'echo "werey"'
                         //sh 'npm install --verbose'
-                        sh 'npm test --watchAll=false'
+                        //sh 'npm test --watchAll=false'
                 }
             }
             }
