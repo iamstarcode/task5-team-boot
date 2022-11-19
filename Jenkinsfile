@@ -16,9 +16,9 @@ pipeline {
             stage('Unit Tests') {
             steps {
                 script {
-                        sh 'cd client/ && npm install --verbose'
+                        sh 'cd client/ && npm install --verbose && npm test -- --watchAll=false'
                         //sh 'npm install --verbose'
-                        sh 'npm test -- --watchAll=false'
+                        //sh ''
 
                         sh 'cd ..'
                         sh 'cd server/ && npm install --verbose'
