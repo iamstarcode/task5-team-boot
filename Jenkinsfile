@@ -16,8 +16,16 @@ pipeline {
             stage('Unit Tests') {
             steps {
                     script {
+                        dir('client') {
                         sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
+                        }
+
+                        dir('server') {
+                         sh 'npm install --verbose'
+                         sh 'npm test -- --watchAll=false'
+                        }
+                    }
                     }
             }
             }
