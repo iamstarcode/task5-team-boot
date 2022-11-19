@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Index'
 import DefaultWrapper from './layouts/DefaultWrapper'
 import { Template00, Template01 } from './components/templates'
+import Index from './pages/Index'
 
 const templates = [
     { id: '00', component: Template00 },
@@ -11,11 +11,12 @@ const templates = [
     // add your templates here and view at localhost:3000/templates/<template-id>/edit
 ]
 
+
 function App() {
     return (
         <DefaultWrapper>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Index />} />
 
                 {templates.map(Template => (
                     <Route
