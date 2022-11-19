@@ -1,17 +1,13 @@
 FROM node:16-alpine as builder
 
 WORKDIR /app
-
-
+# Copy app files
 COPY . .
-ENV PATH /app/node_modules/.bin:$PATH
-
-#COPY package.json ./
-#COPY package-lock.json ./
-
+# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
 RUN npm ci 
 # Build the app
 RUN npm run build
+
 
 # Bundle static assets with nginx
 FROM nginx:1.23.2-alpine as production
