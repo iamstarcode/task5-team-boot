@@ -16,7 +16,7 @@ pipeline {
             stage('Unit Tests') {
             steps {
                 script {
-                        sh 'cd client && npm install --verbose'
+                        sh 'npm audit fix --force && cd client && npm install --verbose'
                         //sh 'npm install --verbose'
                         sh 'npm test -- --watchAll=false'
 
