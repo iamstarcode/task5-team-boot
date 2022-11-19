@@ -17,14 +17,9 @@ pipeline {
             steps {
                 script {
                         sh 'cd client/ && npm install --verbose'
-                        //sh 'npm install --verbose'
-                        //sh ''
 
                         //sh 'cd ..'
                         sh 'cd server/ && npm install --verbose'
-                // 'echo "werey"'
-                //sh 'npm install --verbose'
-                //sh 'npm test --watchAll=false'
                 }
             }
             }
