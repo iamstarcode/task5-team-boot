@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+    .button{
+        @apply py-3 px-6 justify-center items-center font-bold text-base text-center lg:w-44 h-12 rounded;
+    }
+}
