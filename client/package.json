@@ -17,7 +17,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "prepare": "husky install",
+        "prepare": "if [ -z \"$AN_ENV_VAR\" ]; then husky install ; fi",
         "lint": "prettier --check .",
         "format": "prettier --write ."
     },
